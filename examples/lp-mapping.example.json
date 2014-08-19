@@ -1,0 +1,14 @@
+{
+  "https://lcp.points.com/v1/lps/<lp-id>": {
+     "etKey": "<key>",
+     "etSecret": "<secret>"
+  },
+  "https://lcp.points.com/v1/lps/<lp2-id>": {
+     "etKey": "<key>",
+     "etSecret": "<secret>"
+  }, 
+  "https://lcp.points.com/v1/lps/<lp3-id>": {
+     "etKey": "<key>",
+     "etSecret": "<secret>"
+  }
+}

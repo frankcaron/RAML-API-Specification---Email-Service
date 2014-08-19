@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "id": "http://jsonschema.net",
+  "$schema": "http://json-schema.org/schema",
+  "description": "An email which will be sent using the service.",
+  "properties": {
+    "toAddress":  { "type": "string" },
+    "toName": { "type": "string" },
+    "content": {
+      "template": { "type": "string" },
+      "tokens": { "type": "array" },
+      "languageCode": { "type": "string" }
+    },
+    "order": { "type": "string" }
+  },
+  "required": [ "toAddress", "toName", "content" ]
+}

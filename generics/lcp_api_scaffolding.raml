@@ -1,0 +1,61 @@
+  - readOnlyCollection:
+      description: Collection of available <<resourcePathName>> in the service.
+      get:
+        description: Get a list of <<resourcePathName>>.
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include <<exampleCollection>>
+  - collection:
+      description: Collection of available <<resourcePathName>> in the service.
+      get:
+        description: Get a list of <<resourcePathName>>.
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include <<exampleCollection>>
+      post:
+        description: | 
+          Add a new <<resourcePathName|!singularize>> to the service.
+        body:
+          application/json:
+            schema: <<resourcePathName|!singularize>>
+            example: !include <<exampleItem>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  { "message": "The <<resourcePathName|!singularize>> with {<<resourcePathName|!singularize>>Id} has been properly created" }
+  - collection-item:
+      description: Entity representing a <<resourcePathName|!singularize>>
+      get:
+        description: |
+          Get the <<resourcePathName|!singularize>>
+          with <<resourcePathName|!singularize>>Id =
+          {<<resourcePathName|!singularize>>Id}
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include <<exampleItem>>
+          404:
+            body:
+              application/json:
+                example: |
+                  {"message": "<<resourcePathName|!singularize>> not found" }
+      put:
+        description: | 
+          Update an existing <<resourcePathName|!singularize>> in the Email Service.
+        body:
+          application/json:
+            schema: <<resourcePathName|!singularize>>
+            example: !include <<exampleItem>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  { "message": "The <<resourcePathName|!singularize>> with  {<<resourcePathName|!singularize>>Id} has been properly updated" }

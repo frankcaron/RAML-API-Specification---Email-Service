@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "id": "http://jsonschema.net",
+  "$schema": "http://json-schema.org/schema",
+  "description": "An email template which will be consumed by an email and used to send it via the email service.",
+  "properties": {
+    "lp-mapping":  { 
+      "type": "object",
+      "oneOf": { "ref": "#/lp-mappings" }
+    }
+  },
+  "required": [ "mapping" ]
+}

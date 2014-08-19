@@ -1,0 +1,19 @@
+[{
+  "templateFriendlyName": "receipt",
+  "type": "external",
+  "lp": "https://lcp.points.com/v1/lps/<lp-id>",
+  "languages": {
+    "en": {
+      "etTemplateExternalKey": "tx_example_template_en"
+    },
+    "fr": {
+      "etTemplateExternalKey": "tx_example_template_fr"
+    }
+  },
+  "status": {
+      "2014-02-26T17:47:15Z": {
+          "author": "<app-id-uri>",
+          "status": "draft"
+      }
+  }
+}]

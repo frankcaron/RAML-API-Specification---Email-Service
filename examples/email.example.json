@@ -1,0 +1,12 @@
+{
+  "content": { 
+     "template": "points_email_integration_test",
+     "tokens": {
+         "token": "foobar",
+         "nekot": "barfoo"  
+     }, 
+     "languageCode": "en"
+  },  
+  "toAddress": "member@lp.com",
+  "toName": "Member"
+}

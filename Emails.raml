@@ -1,0 +1,96 @@
+#%RAML 0.8
+---
+title: LCP Email Service
+version: 1.0
+baseUri: http://localhost:8080/api
+mediaType: application/json
+documentation:
+  - title: LCP Email Service
+    content: |
+      This RAML defines the generic email service using the common LCP API scaffolding. 
+
+# Schemas
+#
+# These schemas define the necessary JSON validation
+# for all of the request bodies.
+
+schemas:
+ - email: !include schemas/email.schema.json
+ - email-template: !include schemas/template.schema.json
+ - lp-mapping: !include schemas/lp-mapping.schema.json
+
+# Resource Types
+#
+# This generic scaffolding streamlines what 
+# has to be written for the entire API 
+
+resourceTypes: !include generics/lcp_api_scaffolding.raml
+
+# Traits
+#
+# Common traits defined for the API, which include
+# non-resource specific behavior like pagination
+
+traits:
+  - paged:
+      queryParameters:
+        pages:
+          description: The number of pages to return
+          type: number
+          
+# API
+#
+# Definition of the various collections and resources
+# along with the operations and responses
+
+/email-templates:
+  is: [ paged ]
+  type:
+    collection:
+      exampleCollection: examples/templates.example.json
+      exampleItem: examples/template.example.json
+  get:
+    description: Retrieve all email templates
+  post:
+    description: Create an email template
+    
+  /{templateId}:
+    type:
+      collection-item:
+        exampleItem: examples/template.example.json
+    get: 
+      description: Retrieve an email
+    put:
+      description: Update an email template
+
+/emails:
+  is: [ paged ]
+  type:
+    collection:
+      exampleCollection: examples/emails.example.json
+      exampleItem: examples/email.example.json
+  get:
+    description: Retrieve all emails
+  post:
+    description: Create an email
+  
+  /{emailId}:
+    type:
+      collection-item:
+        exampleItem: examples/email.example.json
+    get: 
+      description: Retrieve an email
+    put:
+      description: Update an existing email
+
+/lp-mapping:
+  is: [ paged ]
+  type:
+    collection-item:
+      exampleItem: examples/lp-mapping.example.json
+  get:
+    description: Retrieve the lp-mapping schema
+  put:
+    description: Update the lp-mapping schema
+         
+            

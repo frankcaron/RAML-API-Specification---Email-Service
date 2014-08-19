@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "id": "http://jsonschema.net",
+  "$schema": "http://json-schema.org/schema",
+  "description": "An email template which will be consumed by an email and used to send it via the email service.",
+  "properties": {
+    "templateFriendlyName":  { "type": "string" },
+    "type": { "type": "string" },
+    "lp": { "type": "string" },
+    "languages": { 
+       "type": "object",
+       "oneOf": { "ref": "#/template-languages" }
+    },
+    "status": { "type": "array" }
+  },
+  "required": [ "templateFriendlyName", "type", "languages" ]
+}
